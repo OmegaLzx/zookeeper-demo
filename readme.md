@@ -52,7 +52,7 @@ clientPort=2181
 
 ~~~shell
 # 创建文件
-$ vim xsync.sh
+$ vim xsync.sh.sh
 
 # 文件内容
 #!/bin/bash
@@ -95,8 +95,6 @@ export PATH=$PATH:/root/bin
 $ source /root/.bashrc
 ~~~
 
-  
-
 ## 部署手册
 
 ~~~shell
@@ -105,7 +103,26 @@ $ vim /etc/hostname
 # 配置服务器ID，该配置在dataDir对应目录下
 $ cd /opt/module/zookeeper-3.8.0/zkData
 $ vim myid
+# 在zKData目录下创建myid文件，并在第一行手动输入唯一标识
+# 启动所有服务
+$ ./bin/zkServer.sh start
+~~~
 
+## 节点类型
 
+1. 持久不带序号
+2. 短暂不带序号
+3. 持久带序号
+4. 短暂带序号
+
+> 持久节点和非持久节点的区别在于客户端断开连接后，由该客户端创建的节点是否自动删除
+>
+> 是否为序号节点的区别在于同名节点会按照递增的顺序增加序号值
+
+## Java API
+
+### 创建节点
+
+~~~java
 ~~~
 

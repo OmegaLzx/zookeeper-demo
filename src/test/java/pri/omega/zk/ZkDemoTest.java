@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Slf4j
 public class ZkDemoTest {
-    String connectString = "jc-team3-02:2181";
+    String connectString = "node1:2181,node2:2181,node3:2181";
     int sessionTimeout = 5000;
 
     Watcher event = event1 -> {
